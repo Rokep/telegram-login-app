@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: telegram-login-app
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: API_ID
+        value: your_api_id_here
+      - key: API_HASH
+        value: your_api_hash_here

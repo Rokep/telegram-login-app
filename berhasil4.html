@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Pendaftaran</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .animated-title {
+      font-size: 20px;
+      color: #007bff;
+      font-weight: bold;
+      display: inline-block;
+      transform-origin: center;
+      animation: scaleXopenclose 2.5s infinite ease-in-out;
+    }
+    @keyframes scaleXopenclose {
+      0%, 100% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scaleX(0);
+        opacity: 0.5;
+      }
+    }
+    .processing {
+      text-align: center;
+      padding: 30px;
+    }
+    .processing img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+    }
+    .join-today {
+      background-color: #c9302c;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .header-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="IMG-20250510-WA0008_2.jpg" alt="Daftar Sekarang" class="header-image">
+
+  <div style="text-align: center; padding: 20px;">
+    <p class="animated-title">INPUT DATA DENGAN TEPAT DAN BENAR</p>
+  </div>
+
+  <div class="processing">
+    <img src="IMG-20250510-WA0010_1.jpg" alt="Processing please wait">
+    <p>Silahkan tunggu proses pengecekan data dalam masa 1x24 jam oleh tim kami,</p>
+    <p><strong>Atau Gunakan Nomor Telepon Lain</strong></p>
+    <button onclick="window.location.href='index.html'">Kembali</button>
+  </div>
+
+</body>
+</html>
